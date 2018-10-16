@@ -25,7 +25,6 @@ py_binary(
         ":models",
         "//astronet/util:config_util",
         "//astronet/util:configdict",
-        "//astronet/util:estimator_runner",
         "//astronet/util:estimator_util",
     ],
 )
@@ -38,7 +37,6 @@ py_binary(
         ":models",
         "//astronet/util:config_util",
         "//astronet/util:configdict",
-        "//astronet/util:estimator_runner",
         "//astronet/util:estimator_util",
     ],
 )

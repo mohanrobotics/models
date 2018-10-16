@@ -6,7 +6,6 @@ py_library(
     name = "kepler_io",
     srcs = ["kepler_io.py"],
     srcs_version = "PY2AND3",
-    deps = [":util"],
 )
 
 py_test(

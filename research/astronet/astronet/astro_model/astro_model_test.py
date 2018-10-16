@@ -35,7 +35,8 @@ class AstroModelTest(tf.test.TestCase):
 
     Args:
       shape: Numpy array or anything that can be converted to one.
-      tensor_or_array: tf.Tensor, tf.Variable, or Numpy array.
+      tensor_or_array: tf.Tensor, tf.Variable, Numpy array or anything that can
+          be converted to one.
     """
     if isinstance(tensor_or_array, (np.ndarray, np.generic)):
       self.assertAllEqual(shape, tensor_or_array.shape)

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>mohan_dataset</folder>
+	<filename>5.jpg</filename>
+	<path>/home/mohandass/Desktop/mohan_dataset/5.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>950</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>mohan</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>468</xmin>
+			<ymin>41</ymin>
+			<xmax>799</xmax>
+			<ymax>463</ymax>
+		</bndbox>
+	</object>
+</annotation>
