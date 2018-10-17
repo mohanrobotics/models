@@ -95,7 +95,7 @@ TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}.jpg'.format(i)) f
 ```
 #### Reference: 
 
-https://pythonprogramming.net/introduction-use-tensorflow-object-detection-api-tutorial/
-https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9
+https://pythonprogramming.net/introduction-use-tensorflow-object-detection-api-tutorial/ <br>
+https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 <br>
 https://github.com/datitran/raccoon_dataset
 
