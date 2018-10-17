@@ -34,7 +34,7 @@ images
 ###### Step2:
  LabelImg is used to annotate the image. LabelImg can be installed using 'https://github.com/tzutalin/labelImg'.  Launch LabelImg and open the directory where we have placed the train and test images. First open the dir with train images. Click 'Create RectBox' and annotate the image and label them. Click 'save' which will save an .xml file for each image. Annotate the images in the 'test' folder as well.
 ###### Step3 :
- In the '/models/research/object_detection' directory, Launch the xml_to_csv.py which will generate the csv file for the train and test image in the 'data' folder.
+ Run xml_to_csv.py which will generate the csv file for the train and test image in the 'data' folder.
 ``` bash 
 #/models/research/object_detection
 python xml_to_csv.py
@@ -42,8 +42,9 @@ python xml_to_csv.py
 ###### Step 4: 
 Install the Tensorflow Object Detection API following the step given in the 'https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md'
 
-Hint : apart from dependencies,# From tensorflow/models/research/, the following line are important.(when you get an error:No module named 'object_detection')
+Hint : apart from dependencies, the following line are important.(when you get an error:No module named 'object_detection')
 ``` bash 
+# From tensorflow/models/research/
 wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
 unzip protobuf.zip
 ./bin/protoc object_detection/protos/*.proto --python_out=.
@@ -53,8 +54,10 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 
 ###### Step5 : 
 After the successful installation, following changes neeed to be done in the 'generate_tfrecord.py' from  the '/models/research/object_detection' directory. 
-	In the generate_tfrecord.py, change the 'row_label' with the name of the label used while annotating in the 'class_text_to_int' function.
-	Now launch the generate_tfrecord.py file 
+
+In the generate_tfrecord.py, change the 'row_label' with the name of the label used while annotating in the 'class_text_to_int' function.
+
+Now launch the generate_tfrecord.py file 
 ``` bash
 # training set
 python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=data/train.record
@@ -65,7 +68,10 @@ python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=data
 ###### Step 6 : 
 Edit the 'object_detection.pbtxt' from the '/models/research/object_detection/data' with your label and id. In my case, id is 1 and label is 'mohan'
 ###### Step 7 :
- 'ssd_mobilenet_v1_pets.config' has all the configuration required for training. You can adjust the num_classes, batch_size , number of training steps etc., in this file.(I have set the batch size to 12 and num_steps: 200000. I am having nvidia gforce 940mx). So based on you GPU capacity , you can vary this.
+'ssd_mobilenet_v1_pets.config' has all the configuration required for training. 
+
+You can adjust the num_classes, batch_size , number of training steps etc., in this file.(I have set the batch size to 12 and num_steps: 200000. I am having nvidia gforce 940mx). So based on you GPU capacity , you can vary this.
+
 ###### Step 8 : 
 For training, run
 ``` bash
@@ -85,6 +91,6 @@ Edit the model.ckpt number with ckpt generated under '/models/research/object_de
 ###### Step 10:
  Now you can put some some images in the models/research/object_detection/test_images folder that you want to test with your trained model. After placing the images, launch 'jupyter notebook' and open the 'object_detection_tutorial.ipynb' file. In the detection section,give the range of your filenames you will be tested. In the following , images 3.jpg,4.jpg,5.jpg,6.jpg,7.jpg under the test_images folder will be tested.
 ``` bash
-	TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}.jpg'.format(i)) for i in range(3, 8) ] 
+TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}.jpg'.format(i)) for i in range(3, 8) ] 
 ```
 
