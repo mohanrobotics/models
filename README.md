@@ -93,4 +93,9 @@ Edit the model.ckpt number with ckpt generated under '/models/research/object_de
 ``` bash
 TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, '{}.jpg'.format(i)) for i in range(3, 8) ] 
 ```
+#### Reference: 
+
+https://pythonprogramming.net/introduction-use-tensorflow-object-detection-api-tutorial/
+https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9
+https://github.com/datitran/raccoon_dataset
 
